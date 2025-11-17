@@ -41,7 +41,7 @@ class CustomBottomNavBar extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(IconData icon, int index, String label) {
+  Widget _buildNavItem(IconData icon, int index, String label ) {
     final isSelected = currentIndex == index;
     return Expanded(
       child: InkWell(

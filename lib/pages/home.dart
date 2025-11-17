@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/bottomNavBar.dart';
 import '../components/restaurantCard.dart';
+import 'login.dart';
 
 class FoodHomePage extends StatefulWidget {
   const FoodHomePage({super.key});
@@ -296,9 +297,16 @@ class _FoodHomePageState extends State<FoodHomePage> {
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: selectedIndex,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          if (index == 3) {
+            // Profile icon clicked - navigate to login page
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LoginPage()),
+            );
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
         },
       ),
     );
